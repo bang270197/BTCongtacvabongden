@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let switchButton=function (electric) {
+        this.status=false;
+        this.electric=electric;
+        this.setElectric=function (electric) {
+            this.electricLamp=electric;
+        }
+        this.getElectric=function () {
+            if (this.electric>0){
+                console.log("Nang luong cua Switch: " +this.electric);
+            } else {
+                console.log("Switch da het nang luong");
+            }
+
+        }
+        this.turnOn=function () {
+            this.status=true;
+            this.electric--;
+        }
+        this.turnOff=function () {
+            this.status=false;
+        }
+
+    }
+    let electricLamp=function (electricLamp) {
+       this.status=false;
+       this.electricLamp=electricLamp;
+       this.connectswitch=function (switchButton) {
+           this.electricLamp=switchButton.electric;
+       }
+       this.connectstatus=function (switchButton) {
+           this.status=switchButton.status;
+       }
+       this.checkStatusLamp=function () {
+           if(this.status==true)
+           {
+               console.log("Bong den da sang");
+           }else {
+               console.log("Bong den da tat");
+           }
+       }
+    }
+    let sbtn= new switchButton(10);
+    let lamp=new electricLamp();
+    lamp.checkStatusLamp();
+    sbtn.turnOn();
+    lamp.checkStatusLamp();
+   console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    lamp.checkStatusLamp();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+    sbtn.turnOff();
+    sbtn.turnOn();
+    console.log(sbtn.getElectric() );
+
+</script>
+</body>
+</html>
